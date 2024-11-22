@@ -1,12 +1,12 @@
 import Link from "next/link";
 import "./globals.css";
-import { Sour_Gummy } from "next/font/google";
+// import { Sour_Gummy } from "next/font/google";
 
-export const gummy = Sour_Gummy({
-  weight: "200",
-  subsets: ["latin"],
-  display: "swap",
-});
+// export const gummy = Sour_Gummy({
+//   weight: "200",
+//   subsets: ["latin"],
+//   display: "swap",
+// });
 
 export const metadata = {
   title: "Rating System",
@@ -16,7 +16,7 @@ export const metadata = {
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className="flex flex-col min-h-screen relative pb-20">
-      <body className={`${gummy.className}`}>
+      <body>
         <nav className="m-5">
           <Link
             href="/brand"

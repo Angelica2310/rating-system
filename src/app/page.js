@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React from "react";
 
 export default function HomePage() {
@@ -15,12 +16,12 @@ export default function HomePage() {
             Sorry, we can&apos;t find that page. You&apos;ll find lots to
             explore on the home page.{" "}
           </p>
-          <a
+          <Link
             href="/brand"
             className="inline-flex text-red-600 bg-primary-600 hover:bg-primary-800 focus:ring-4 focus:outline-none focus:ring-primary-300 font-medium rounded-lg text-sm px-5 py-2.5 text-center dark:focus:ring-primary-900 my-4"
           >
             Back to Brand Page
-          </a>
+          </Link>
         </div>
       </div>
     </section>
