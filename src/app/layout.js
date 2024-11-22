@@ -2,7 +2,11 @@ import Link from "next/link";
 import "./globals.css";
 import { Sour_Gummy } from "next/font/google";
 
-export const gummy = Sour_Gummy({ weight: "200", subsets: ["latin"] });
+export const gummy = Sour_Gummy({
+  weight: "200",
+  subsets: ["latin"],
+  display: "swap",
+});
 
 export const metadata = {
   title: "Rating System",

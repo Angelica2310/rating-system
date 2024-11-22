@@ -8,11 +8,11 @@ export default async function SingleBrandPage({ params }) {
 
   //   console.log(brand);
 
-  const comment = (
+  const comments = (
     await db.query(`SELECT * FROM comment WHERE brand_id =${id}`)
-  ).rows[0];
+  ).rows;
 
-  console.log(comment);
+  //   console.log(comment);
 
   return (
     <div className="flex flex-col items-center">
@@ -24,10 +24,13 @@ export default async function SingleBrandPage({ params }) {
         className="mt-20"
       />
       <p className="mt-5 w-3/5 text-xl text-justify">{brand.intro} </p>
-
-      <p className="m-20 bg-cream w-3/5 pl-2">
-        {comment.name}: {comment.comment}
-      </p>
+      {comments.map((comment) => {
+        return (
+          <p className="m-20 bg-cream w-3/5 pl-2" key={comment.id}>
+            {comment.name}: {comment.comment}
+          </p>
+        );
+      })}
     </div>
   );
 }
