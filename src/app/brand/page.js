@@ -27,7 +27,6 @@ export default async function BrandPage() {
                   className="hover:cursor-pointer"
                 />
               </Link>
-              {/* <p className="font-black text-brown mt-10">{brand.name}</p> */}
             </div>
           );
         })}
