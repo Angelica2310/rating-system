@@ -14,6 +14,7 @@ export default async function BrandPage() {
   return (
     <div className="flex flex-col items-center">
       <p className="text-4xl font-extrabold p-10 mb-5">Rate your favorite !!</p>
+
       <div className="grid grid-cols-5 grid-rows-1 w-4/5 gap-x-10">
         {brands.map((brand) => {
           return (

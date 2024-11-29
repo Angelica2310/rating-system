@@ -14,6 +14,10 @@ module.exports = {
         brown: "var(--brown)",
       },
     },
+    fontFamily: {
+      gummy: ["Sour Gummy", "serif"],
+      marker: ["Permanent Marker", "serif"],
+    },
   },
   plugins: [],
 };

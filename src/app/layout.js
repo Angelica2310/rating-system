@@ -1,15 +1,27 @@
-import Link from "next/link";
+// import RoutesComponent from "@/Utils/Routes";
 import "./globals.css";
 import localFont from "next/font/local";
+import {
+  ClerkProvider,
+  SignInButton,
+  SignedIn,
+  SignedOut,
+  UserButton,
+} from "@clerk/nextjs";
+import { FaSignInAlt } from "react-icons/fa";
+import ActiveLink from "@/components/ActiveLink";
+import { IoHome } from "react-icons/io5";
+import { FaUser } from "react-icons/fa";
+import HeaderMotion from "@/components/HeaderMotion";
 
 const sourGummy = localFont({
   src: "./fonts/SourGummy.ttf",
   variable: "--font-sour-gummy",
-  weight: "100 900",
+  weight: "100 400",
 });
-const sourGummyItalic = localFont({
-  src: "./fonts/SourGummy-Italic.ttf",
-  variable: "--font-sour-gummy-italic",
+const marker = localFont({
+  src: "./fonts/PermanentMarker.ttf",
+  variable: "--font-permanent-marker",
   weight: "100 900",
 });
 
@@ -20,25 +32,48 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className="flex flex-col min-h-screen relative pb-20">
-      <body className={`${sourGummy.className}`}>
-        <nav className="m-5">
-          <Link
-            href="/brand"
-            className="border border-solid border-blue p-2 text-xl hover:bg-blue hover:text-brown rounded-xl"
-          >
-            All Brand
-          </Link>
-        </nav>
-        {children}
+    <ClerkProvider>
+      <html lang="en" className="flex flex-col min-h-screen relative pb-20">
+        <body className={`${sourGummy.className} `}>
+          <nav className="nav-bar">
+            <ActiveLink href="/">
+              <p className="flex gap-1 justify-center items-center hover:text-lg">
+                <IoHome />
+                Home Page
+              </p>
+            </ActiveLink>
+            <SignedOut>
+              <SignInButton>
+                <ActiveLink href="/sign-in">
+                  <div className="flex gap-1 justify-center items-center hover:text-lg">
+                    <FaSignInAlt />
+                    Sign in
+                  </div>
+                </ActiveLink>
+              </SignInButton>
+            </SignedOut>
 
-        <footer className=" m-4 mt-auto absolute bottom-0 w-screen flex justify-center items-center text-center">
-          <p className="w-full mx-auto max-w-screen-xl p-4 ">
-            {" "}
-            © 2024 Angelica™ . All Rights Reserved.
-          </p>
-        </footer>
-      </body>
-    </html>
+            <SignedIn>
+              <ActiveLink href="/user">
+                <p className="flex gap-1 justify-center items-center hover:text-lg">
+                  <FaUser /> User
+                </p>
+              </ActiveLink>
+              <UserButton />
+            </SignedIn>
+          </nav>
+          <HeaderMotion text="Welcome to Rating System" />
+
+          {children}
+
+          <footer className=" m-4 mt-auto absolute bottom-0 w-screen flex justify-center items-center text-center">
+            <p className="w-full mx-auto max-w-screen-xl p-4 ">
+              {" "}
+              © 2024 Angelica™ . All Rights Reserved.
+            </p>
+          </footer>
+        </body>
+      </html>
+    </ClerkProvider>
   );
 }
