@@ -1,14 +1,18 @@
 # Rating System
 Software Development Bootcamp - Week 8 project - Build a Comment Form using Next.js
-## What requirements did you achieve?
+## Features
 - Users can view all brands on the page and click on their favourite brand for more information. These data are fetched from database. Each brand has comments which also retrieved from the database.
 - The App has a dynamic metadata name.
-- The App contains a home page - a 404 error linked to the All Brand Page.
+- The App contains a home page - showing the rating bar all brands
+- Users can vote for their favourite brands, and the results will be displayed in real-time on the homepage. These data are also fetched from database.
+- Users can sign in using their GitHub or Gmail account to write a comment on their favorite brand. Once signed in, they need to create a username and bio in order to access the comment form. Users can also delete their own comments; however, they are only able to delete their own comments, not those of other users.
+- Users can also view their profile which shows their avatar and login details.
+- There is a 404 error page in case users can not find a page they are looking for, for a better experience.
 - UI layout changes depending on screen size.
+## Reflection
+### What requirements did you achieve?
+All
+### What was it that you found difficult about these tasks?
+This is apparently an assignment that I couldn't complete last week. I'm glad that I am able to finish it this week. The way to use components, and client- and server-side concepts, still confuses me; however, I think I have a better understanding of these compared to last week. I struggled a bit when calling the endpoints, as well as when creating component functions. Writing SQL queries also challenged me, as I had to write and test a few queries in Supabase to make sure they worked before applying them to my code. I'm still confused about the concept of how objects, variables, and parameters work, but so far, I am quite happy with my progress
 ### Were there any requirements or goals that you were unable to achieve?
-- Create a delete button on posts that allows users to delete the post from the database.
-- Create a form which saves comments to a dedicated comments table, with the comments being connected to the posts table with a foreign key.
-- Allow users to comment on individual posts in their dynamic routes. Comments should be associated with posts, and have a dynamic route (e.g. /posts/:postid).
-- Add a redirect when a user creates a post to redirect them to the posts page.
-### If so, what was it that you found difficult about these tasks?
-I feel a bit confused about how Next.js works, especially the distinction between "Client" and "Server." I'm really frustrated with this week's project because I had been doing so well from the beginning. I consistently completed assignments beyond expectations, even achieving the stretch goals. However, for some reason, I just can't seem to complete this week's assignment, and I don't understand why.
+I think I have met all the requirements for this week's assignment, and even went a bit further. I think I can make the UI a bit nicer if I have more time.
