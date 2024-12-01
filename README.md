@@ -7,7 +7,8 @@ Software Development Bootcamp - Week 8 project - Build a Comment Form using Next
 - Users can vote for their favourite brands, and the results will be displayed in real-time on the homepage. These data are also fetched from database.
 - Users can sign in using their GitHub or Gmail account to write a comment on their favorite brand. Once signed in, they need to create a username and bio in order to access the comment form. Users can also delete their own comments; however, they are only able to delete their own comments, not those of other users.
 - Users can also view their profile which shows their avatar and login details.
-- There is a 404 error page in case users can not find a page they are looking for, for a better experience.
+- There is a 404 error page in case users can not find the page they are looking for; icons and a motion header are also been applied for a better UI experience.
+- Radix libraries are being used to create forms.
 - UI layout changes depending on screen size.
 ## Reflection
 ### What requirements did you achieve?
