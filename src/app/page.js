@@ -1,7 +1,6 @@
 import { db } from "@/Utils/db";
 import BrandPage from "./brand/page";
 import BarChart from "@/components/BarChart";
-import UpdateBrandRating from "@/components/UpdateRating";
 
 export const metadata = {
   title: "Rating System | Home",
