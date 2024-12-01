@@ -15,8 +15,8 @@ module.exports = {
       },
     },
     fontFamily: {
-      gummy: ["Sour Gummy", "serif"],
-      marker: ["Permanent Marker", "serif"],
+      gummy: ["var(--font-sour-gummy)"],
+      kranky: ["var(--font-kranky)"],
     },
   },
   plugins: [],

@@ -1,10 +1,16 @@
 export const metadata = {
-  title: "Rating System | User details",
+  title: "User details",
   description: "Details about user",
 };
 
+import BackButton from "@/components/BackButton";
 import { UserProfile } from "@clerk/nextjs";
 
-const UserProfilePage = () => <UserProfile href="/user" />;
-
-export default UserProfilePage;
+export default function UserProfilePage() {
+  return (
+    <div className="flex flex-col items-center">
+      <BackButton />
+      <UserProfile href="/user" />
+    </div>
+  );
+}

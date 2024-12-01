@@ -32,15 +32,6 @@ body {
   margin-bottom: 70px;
 }
 
-.loading {
-  width: 600px;
-  height: 600px;
-  border-radius: 15px;
-  margin: 16px 0;
-  background-color: grey;
-  animation: blink 2s infinite;
-}
-
 @keyframes blink {
   0% {
     opacity: 100%;
@@ -50,5 +41,14 @@ body {
   }
   100% {
     opacity: 100%;
+  }
+}
+
+@media (min-width: 768px) {
+  .nav-bar {
+    gap: 20px;
+  }
+  .header-motion {
+    font-size: 30px;
   }
 }

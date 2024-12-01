@@ -1,15 +1,24 @@
-import { db } from "@/Utils/db";
-import Image from "next/image";
 import Link from "next/link";
+import Image from "next/image";
+import { db } from "@/Utils/db";
+import UpdateBrandRating from "@/components/UpdateRating";
 
 export const metadata = {
   title: "All Brand Information",
   description: "Where to get information about brands",
 };
 
-export default async function BrandPage() {
-  const result = await db.query(`SELECT * FROM brand`);
+export default async function Page() {
+  const result = await db.query(`SELECT 
+brand.name as brand_name,
+brand.img,
+brand.id,
+rating.rating
+FROM brand
+JOIN rating ON rating.brand_id = brand.id ORDER BY brand.id`);
   const brands = result.rows;
+
+  // console.log("brands:", brands);
 
   return (
     <div className="flex flex-col items-center">
@@ -28,6 +37,7 @@ export default async function BrandPage() {
                   className="hover:cursor-pointer"
                 />
               </Link>
+              <UpdateBrandRating brand_id={brand.id} rating={brand.rating} />
             </div>
           );
         })}

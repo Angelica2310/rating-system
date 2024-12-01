@@ -6,7 +6,7 @@ export default function HeaderMotion({ text }) {
   const ref = React.useRef(null);
   const isInView = useInView(ref, { once: true });
   return (
-    <div className="flex space-x-0.5 justify-center p-10 ">
+    <div className="flex space-x-0.5 justify-center p-10 md:text-4xl md:leading-[4rem]">
       <AnimatePresence>
         {(text || "").split("").map((char, i) => (
           <motion.p
@@ -16,7 +16,11 @@ export default function HeaderMotion({ text }) {
             animate={isInView ? { opacity: 1, x: 0 } : {}}
             exit="hidden"
             transition={{ duration: 0.5, delay: i * 0.1 }}
-            className="text-xl text-center sm:text-4xl tracking-tighter md:text-6xl md:leading-[4rem] font-marker font-normal italic"
+            style={{
+              fontFamily: '"Kranky", serif',
+              fontSize: "50px",
+            }}
+            className="header-motion"
           >
             {char === " " ? <span>&nbsp;</span> : char}
           </motion.p>

@@ -12,16 +12,17 @@ import { FaSignInAlt } from "react-icons/fa";
 import ActiveLink from "@/components/ActiveLink";
 import { IoHome } from "react-icons/io5";
 import { FaUser } from "react-icons/fa";
-import HeaderMotion from "@/components/HeaderMotion";
+import HeaderMotion from "@/Utils/header-motion";
 
 const sourGummy = localFont({
   src: "./fonts/SourGummy.ttf",
   variable: "--font-sour-gummy",
   weight: "100 400",
 });
-const marker = localFont({
-  src: "./fonts/PermanentMarker.ttf",
-  variable: "--font-permanent-marker",
+const kranky = localFont({
+  src: "./fonts/Kranky-Regular.ttf",
+  display: "swap",
+  variable: "--font-kranky",
   weight: "100 900",
 });
 
@@ -62,7 +63,10 @@ export default function RootLayout({ children }) {
               <UserButton />
             </SignedIn>
           </nav>
-          <HeaderMotion text="Welcome to Rating System" />
+          <HeaderMotion
+            text="Welcome to Rating System"
+            className="header-motion"
+          />
 
           {children}
 

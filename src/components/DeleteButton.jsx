@@ -1,16 +1,13 @@
 "use client";
 
-// import { db } from "@/Utils/db";
-import DeleteAction from "@/Utils/delete";
-import { revalidatePath } from "next/cache";
-import { useRouter } from "next/navigation";
+import DeleteAction from "@/Utils/delete-action";
+import { useUser } from "@clerk/nextjs";
 
-export default function DeleteButton({ commentId }) {
+export default function DeleteButton({ clerkId, commentId }) {
+  const { user } = useUser();
   const deleteComment = async () => {
-    // console.log('comment deleted');
-    DeleteAction(commentId);
-
-    revalidatePath();
+    await DeleteAction(user.id, commentId);
+    console.log(`Deleted comment with id ${commentId} for clerk_id ${user.id}`);
   };
 
   return (
